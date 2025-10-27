@@ -10,7 +10,6 @@
 | RFC02 | Personalização de Perfil | O usuário deve poder alterar informações pessoais, senha e foto de perfil. | Usabilidade |
 | RFC03 | Níveis de Acesso | O sistema deve ter papéis distintos (Administrador e Operador), com permissões diferenciadas. | Segurança |
 | RFC04 | Notificações Visuais | Alertas de baixo estoque, validade vencida e pedidos pendentes devem ser exibidos de forma visual na interface. | Interatividade |
-| RFC05 | Exportar Relatórios | O usuário deve poder exportar relatórios em formato CSV e PDF. | Usabilidade |
 
 ---
 
