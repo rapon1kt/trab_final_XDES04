@@ -13,20 +13,20 @@
 
 ---
 
-#### Requisitos Funcionais de Sistema (RFS)
+#### Regras de Negócio (RN)
 
 | Código | Nome | Descrição | Tipo |
 |--------|------|------------|------|
-| RFS01 | Produto deve ter categoria e fornecedor | Nenhum produto pode ser cadastrado sem categoria e fornecedor válidos. | Restritiva |
-| RFS02 | Saída depende de estoque disponível | A movimentação de saída é bloqueada se a quantidade em estoque for insuficiente. | Preventiva |
-| RFS03 | Alerta de baixo estoque | Se a quantidade atual < estoque mínimo, o sistema gera alerta e cria pedido de reposição automático. | Automática |
-| RFS04 | Bloqueio por validade vencida | Produtos vencidos são marcados como inativos e não podem ser movimentados. | Validatória |
-| RFS05 | Movimentações são imutáveis | Após o registro, uma movimentação não pode ser editada, apenas estornada. | Integridade |
-| RFS06 | Exclusão restrita | Somente administradores podem excluir produtos, categorias e fornecedores. | Permissão |
-| RFS07 | Histórico de alterações | Toda atualização em produto, fornecedor ou movimentação deve ser registrada no histórico (log). | Rastreabilidade |
-| RFS08 | Estoque negativo proibido | O sistema não permite que o estoque de um produto fique negativo. | Preventiva |
-| RFS09 | Pedido de Reposição Automático | Quando o produto atinge o limite mínimo, um pedido é criado automaticamente e marcado como pendente. | Automação |
-| RFS10 | Auditoria de acessos | O sistema deve registrar todas as ações de login, logout e operações críticas realizadas. | Segurança Interna |
+| RN01 | Produto deve ter categoria e fornecedor | Nenhum produto pode ser cadastrado sem categoria e fornecedor válidos. | Restritiva |
+| RN02 | Saída depende de estoque disponível | A movimentação de saída é bloqueada se a quantidade em estoque for insuficiente. | Preventiva |
+| RN03 | Alerta de baixo estoque | Se a quantidade atual < estoque mínimo, o sistema gera alerta e cria pedido de reposição automático. | Automática |
+| RN04 | Bloqueio por validade vencida | Produtos vencidos são marcados como inativos e não podem ser movimentados. | Validatória |
+| RN05 | Movimentações são imutáveis | Após o registro, uma movimentação não pode ser editada, apenas estornada. | Integridade |
+| RN06 | Exclusão restrita | Somente administradores podem excluir produtos, categorias e fornecedores. | Permissão |
+| RN07 | Histórico de alterações | Toda atualização em produto, fornecedor ou movimentação deve ser registrada no histórico (log). | Rastreabilidade |
+| RN08 | Estoque negativo proibido | O sistema não permite que o estoque de um produto fique negativo. | Preventiva |
+| RN09 | Pedido de Reposição Automático | Quando o produto atinge o limite mínimo, um pedido é criado automaticamente e marcado como pendente. | Automação |
+| RN10 | Auditoria de acessos | O sistema deve registrar todas as ações de login, logout e operações críticas realizadas. | Segurança Interna |
 
 ---
 
