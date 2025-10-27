@@ -9,9 +9,8 @@
 | RFC01 | Autenticação de Usuário | O sistema deve permitir login e logout de usuários, com autenticação por email e senha. | Segurança |
 | RFC02 | Personalização de Perfil | O usuário deve poder alterar informações pessoais, senha e foto de perfil. | Usabilidade |
 | RFC03 | Níveis de Acesso | O sistema deve ter papéis distintos (Administrador e Operador), com permissões diferenciadas. | Segurança |
-| RFC04 | Interface Simples e Responsiva | O sistema deve ter interface clara e adaptável a diferentes dispositivos (PC, tablet, celular). | Experiência do Usuário |
-| RFC05 | Notificações Visuais | Alertas de baixo estoque, validade vencida e pedidos pendentes devem ser exibidos de forma visual na interface. | Interatividade |
-| RFC06 | Exportar Relatórios | O usuário deve poder exportar relatórios em formato CSV e PDF. | Usabilidade |
+| RFC04 | Notificações Visuais | Alertas de baixo estoque, validade vencida e pedidos pendentes devem ser exibidos de forma visual na interface. | Interatividade |
+| RFC05 | Exportar Relatórios | O usuário deve poder exportar relatórios em formato CSV e PDF. | Usabilidade |
 
 ---
 
