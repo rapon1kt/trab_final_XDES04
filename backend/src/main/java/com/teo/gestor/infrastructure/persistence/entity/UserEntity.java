@@ -19,4 +19,5 @@ public class UserEntity {
   private String photoId;
   private boolean active;
   private Instant createdAt;
+  private Instant modifiedAt;
 }
