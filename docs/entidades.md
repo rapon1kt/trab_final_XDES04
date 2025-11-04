@@ -85,5 +85,4 @@
 | quantidade | Int | 
 | dataPedido | Instant | 
 | status | ENUM('PENDENTE', 'APROVADO', 'ENTREGUE', 'CANCELADO') |
-| dataEntrega | Instant | 
 | observacoes | String | 
