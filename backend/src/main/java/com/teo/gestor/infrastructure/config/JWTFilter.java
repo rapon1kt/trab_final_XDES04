@@ -50,7 +50,7 @@ public class JWTFilter extends OncePerRequestFilter {
       String userId = context.getBean(AppAccount.class).getAccountIdByName(name);
       if (jwtService.validateToken(token, userId)) {
         List<GrantedAuthority> authorities = List.of(new SimpleGrantedAuthority("ROLE_" + role));
-        UsernamePasswordAuthenticationToken authToken = new UsernamePasswordAuthenticationToken(name, null,
+        UsernamePasswordAuthenticationToken authToken = new UsernamePasswordAuthenticationToken(userId, null,
             authorities);
         SecurityContextHolder.getContext().setAuthentication(authToken);
       }
