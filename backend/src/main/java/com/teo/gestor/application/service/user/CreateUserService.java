@@ -3,7 +3,7 @@ package com.teo.gestor.application.service.user;
 import org.springframework.stereotype.Service;
 
 import com.teo.gestor.domain.model.User;
-import com.teo.gestor.domain.usecases.CreateUserUseCase;
+import com.teo.gestor.domain.usecases.user.CreateUserUseCase;
 import com.teo.gestor.infrastructure.config.security.PasswordEncoderService;
 import com.teo.gestor.infrastructure.persistence.entity.UserEntity;
 import com.teo.gestor.infrastructure.persistence.repository.UserRepository;
