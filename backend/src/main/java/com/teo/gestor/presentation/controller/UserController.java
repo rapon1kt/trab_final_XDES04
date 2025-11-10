@@ -22,7 +22,7 @@ public class UserController {
   }
 
   @PatchMapping
-  public ResponseEntity<?> getMethodName(@RequestParam("id") String userId,
+  public ResponseEntity<?> update(@RequestParam("id") String userId,
       @RequestBody UpdateUserRequestDTO requestDTO) {
     return ResponseEntity.ok(this.updateUserService.handle(userId, requestDTO.getEmail(), requestDTO.getPassword()));
   }
