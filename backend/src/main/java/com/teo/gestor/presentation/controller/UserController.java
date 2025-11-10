@@ -13,8 +13,8 @@ import com.teo.gestor.application.service.user.DeleteUserService;
 import com.teo.gestor.application.service.user.FindUsersService;
 import com.teo.gestor.application.service.user.UpdateUserService;
 import com.teo.gestor.domain.model.UserFilter;
-import com.teo.gestor.presentation.dto.DeleteUserRequestDTO;
-import com.teo.gestor.presentation.dto.UpdateUserRequestDTO;
+import com.teo.gestor.presentation.dto.user.DeleteUserRequestDTO;
+import com.teo.gestor.presentation.dto.user.UpdateUserRequestDTO;
 
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.GetMapping;
