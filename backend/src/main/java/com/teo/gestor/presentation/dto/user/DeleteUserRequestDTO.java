@@ -1,4 +1,4 @@
-package com.teo.gestor.presentation.dto;
+package com.teo.gestor.presentation.dto.user;
 
 import jakarta.validation.constraints.NotBlank;
 
