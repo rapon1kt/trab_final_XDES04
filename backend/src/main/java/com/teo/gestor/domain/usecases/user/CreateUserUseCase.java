@@ -1,4 +1,4 @@
-package com.teo.gestor.domain.usecases;
+package com.teo.gestor.domain.usecases.user;
 
 import com.teo.gestor.domain.model.User;
 
