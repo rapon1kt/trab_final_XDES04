@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.teo.gestor.application.service.user.CreateUserService;
 import com.teo.gestor.application.service.user.LoginUserService;
 import com.teo.gestor.domain.model.User;
-import com.teo.gestor.presentation.dto.CreateUserRequestDTO;
-import com.teo.gestor.presentation.dto.LoginUserRequestDTO;
+import com.teo.gestor.presentation.dto.user.CreateUserRequestDTO;
+import com.teo.gestor.presentation.dto.user.LoginUserRequestDTO;
 
 import jakarta.validation.Valid;
 
