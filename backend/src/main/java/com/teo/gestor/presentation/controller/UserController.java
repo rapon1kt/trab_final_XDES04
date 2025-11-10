@@ -1,5 +1,7 @@
 package com.teo.gestor.presentation.controller;
 
+import java.util.Optional;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
@@ -8,11 +10,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.teo.gestor.application.service.user.DeleteUserService;
+import com.teo.gestor.application.service.user.FindUsersService;
 import com.teo.gestor.application.service.user.UpdateUserService;
+import com.teo.gestor.domain.model.UserFilter;
 import com.teo.gestor.presentation.dto.DeleteUserRequestDTO;
 import com.teo.gestor.presentation.dto.UpdateUserRequestDTO;
 
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.GetMapping;
 
 @RestController
 @RequestMapping("/users")
@@ -20,10 +25,13 @@ public class UserController {
 
   private final UpdateUserService updateUserService;
   private final DeleteUserService deleteUserService;
+  private final FindUsersService findUsersService;
 
-  public UserController(UpdateUserService updateUserService, DeleteUserService deleteUserService) {
+  public UserController(UpdateUserService updateUserService, DeleteUserService deleteUserService,
+      FindUsersService findUsersService) {
     this.updateUserService = updateUserService;
     this.deleteUserService = deleteUserService;
+    this.findUsersService = findUsersService;
   }
 
   @PatchMapping
@@ -36,6 +44,12 @@ public class UserController {
   public ResponseEntity<?> delete(@RequestParam("id") String userId,
       @RequestBody DeleteUserRequestDTO requestDTO) {
     return ResponseEntity.ok(this.deleteUserService.handle(userId, requestDTO.getPassword()));
+  }
+
+  @GetMapping
+  public ResponseEntity<?> find(@RequestParam("filter") UserFilter filter,
+      @RequestParam("value") Optional<String> value) {
+    return ResponseEntity.ok(this.findUsersService.handle(filter, value));
   }
 
 }
