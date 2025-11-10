@@ -8,7 +8,6 @@ public class User {
   private String email;
   private String password;
   private Role role;
-  private String photoId;
   private boolean active;
   private Instant createdAt;
   private Instant modifiedAt;
@@ -16,14 +15,13 @@ public class User {
   public User() {
   }
 
-  public User(String id, String name, String email, String password, Role role, String photoId, boolean active,
+  public User(String id, String name, String email, String password, Role role, boolean active,
       Instant createdAt, Instant modifiedAt) {
     this.id = id;
     this.name = name;
     this.email = email;
     this.password = password;
     this.role = role;
-    this.photoId = photoId;
     this.active = active;
     this.createdAt = createdAt;
     this.modifiedAt = modifiedAt;
@@ -36,6 +34,7 @@ public class User {
     newUser.setPassword(password);
     newUser.setActive(true);
     newUser.setCreatedAt(Instant.now());
+    newUser.setModifiedAt(Instant.now());
     newUser.setRole(Role.OPERATOR);
     return newUser;
   }
@@ -78,14 +77,6 @@ public class User {
 
   public void setRole(Role role) {
     this.role = role;
-  }
-
-  public String getPhotoId() {
-    return photoId;
-  }
-
-  public void setPhotoId(String photoId) {
-    this.photoId = photoId;
   }
 
   public boolean isActive() {
