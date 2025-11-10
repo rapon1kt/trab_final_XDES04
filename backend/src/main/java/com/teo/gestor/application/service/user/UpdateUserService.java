@@ -6,7 +6,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.teo.gestor.domain.model.User;
-import com.teo.gestor.domain.usecases.UpdateUserUseCase;
+import com.teo.gestor.domain.usecases.user.UpdateUserUseCase;
 import com.teo.gestor.infrastructure.persistence.entity.UserEntity;
 import com.teo.gestor.infrastructure.persistence.repository.UserRepository;
 import com.teo.gestor.presentation.mapper.UserMapper;

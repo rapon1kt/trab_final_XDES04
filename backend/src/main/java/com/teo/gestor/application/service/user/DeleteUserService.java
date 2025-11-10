@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.teo.gestor.domain.model.Role;
 import com.teo.gestor.domain.model.User;
-import com.teo.gestor.domain.usecases.DeleteUserUseCase;
+import com.teo.gestor.domain.usecases.user.DeleteUserUseCase;
 import com.teo.gestor.infrastructure.persistence.entity.UserEntity;
 import com.teo.gestor.infrastructure.persistence.repository.UserRepository;
 import com.teo.gestor.presentation.mapper.UserMapper;
