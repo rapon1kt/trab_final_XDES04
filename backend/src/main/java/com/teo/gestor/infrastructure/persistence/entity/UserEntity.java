@@ -16,7 +16,6 @@ public class UserEntity {
   private String email;
   private String password;
   private Role role;
-  private String photoId;
   private boolean active;
   private Instant createdAt;
   private Instant modifiedAt;
