@@ -25,10 +25,16 @@ public class CreateUserService implements CreateUserUseCase {
 
   @Override
   public User handle(String name, String email, String password) {
+    validateEmail(email);
     String hashedPassword = this.passwordEncoderService.encode(password);
     User newUser = User.create(name, email, hashedPassword);
     UserEntity savedUser = this.userRepository.save(mapper.toEntity(newUser));
     return mapper.toDomain(savedUser);
+  }
+
+  private void validateEmail(String email) {
+    if (this.userRepository.existsByEmail(email))
+      throw new IllegalArgumentException("Esse e-mail já está registrado.");
   }
 
 }
