@@ -1,0 +1,16 @@
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 2rem 0;
+  padding: 2rem;
+  background-color: var(--bg-card);
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  min-height: 70vh;
+}
+
+.container p {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+}
