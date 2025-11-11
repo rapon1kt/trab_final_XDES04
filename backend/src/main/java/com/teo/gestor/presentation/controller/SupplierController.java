@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @RestController
-@RequestMapping("/supplier")
+@RequestMapping("/suppliers")
 public class SupplierController {
 
   private final RegisterSupplierService registerSupplierService;

@@ -39,6 +39,8 @@ public class FindSuppliersService implements FindSuppliersUseCase {
         supplierEntity = this.supplierRepository.findById(presentValue)
             .orElseThrow(() -> new IllegalArgumentException("Fornecedor não encontrado!"));
         return List.of(supplierMapper.toDomain(supplierEntity));
+      case ALL:
+        return this.supplierRepository.findAll().stream().map(this.supplierMapper::toDomain).toList();
       default:
         throw new IllegalArgumentException("Método de filtro não aceitável!");
     }
