@@ -42,6 +42,8 @@ public class FindUsersService implements FindUsersUseCase {
       case ROLE:
         return this.userRepository.findByRole(Role.valueOf(presentValue)).stream().map(this.userMapper::toDomain)
             .toList();
+      case ALL:
+        return this.userRepository.findAll().stream().map(this.userMapper::toDomain).toList();
       default:
         throw new IllegalArgumentException("Método de filtro não aceitável!");
     }
