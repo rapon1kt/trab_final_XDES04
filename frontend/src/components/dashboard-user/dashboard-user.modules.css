@@ -1,0 +1,404 @@
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  width: 100%;
+}
+
+.dashboard-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.filter-bar-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.dashboard-left-container {
+  width: 100%;
+}
+
+.dashboard-left-container-forms {
+  margin-bottom: 0;
+  flex-grow: 1;
+}
+
+.add-user-button {
+  background-color: var(--accent);
+  color: var(--bg-dark);
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  height: fit-content;
+  white-space: nowrap;
+}
+
+.filter-bar-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.dashboard-left-container-forms {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.dashboard-left-container-input-div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex-grow: 1;
+  min-width: 200px;
+}
+
+.dashboard-left-container-label {
+  font-weight: 600;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.dashboard-left-container-forms input[type="text"],
+.dashboard-left-container-select {
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  font-family: inherit;
+  width: 100%;
+}
+
+.dashboard-left-container-forms input[type="text"]:focus,
+.dashboard-left-container-select:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(127, 255, 212, 0.25);
+}
+
+.dashboard-left-container-forms button {
+  background-color: var(--accent);
+  color: var(--bg-dark);
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  height: fit-content;
+}
+
+.dashboard-left-container-forms button:hover {
+  background-color: var(--accent-dark);
+}
+
+.dashboard-left-container-forms button[type="button"] {
+  background-color: transparent;
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+}
+
+.dashboard-left-container-forms button[type="button"]:hover {
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+  border-color: var(--text-secondary);
+}
+
+.dashboard-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.dashboard-table-header {
+  text-align: left;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.dashboard-table-title {
+  padding: 0.75rem 1rem;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.dashboard-table-body {
+  border-bottom: 1px solid var(--border-color);
+  transition: background-color 0.2s ease;
+}
+
+.dashboard-table-body:last-child {
+  border-bottom: none;
+}
+
+.dashboard-table-body:hover {
+  background-color: var(--bg-dark);
+}
+
+.dashboard-table-value {
+  padding: 1rem;
+  vertical-align: middle;
+  color: var(--text-primary);
+}
+
+.dashboard-table-button {
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.dashboard-table-button.cancel {
+  background-color: transparent;
+  border: 1px solid var(--error);
+  color: var(--error);
+}
+
+.dashboard-table-button.cancel:hover {
+  background-color: rgba(255, 77, 77, 0.1);
+}
+
+.dashboard-table-button.cancel:disabled {
+  background-color: transparent;
+  border-color: var(--border-color);
+  color: var(--border-color);
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.dashboard-right-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: var(--bg-dark);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+}
+
+.dashboard-p-error {
+  background-color: rgba(255, 77, 77, 0.1);
+  border: 1px solid var(--error);
+  color: var(--error);
+  padding: 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.dashboard-p-success {
+  background-color: rgba(77, 255, 136, 0.1);
+  border: 1px solid var(--success);
+  color: var(--success);
+  padding: 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.dashboard-right-container-middle {
+  margin: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.dashboard-right-container-alert {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.user-name {
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+.dashboard-right-container-input-div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.dashboard-right-container-input-label {
+  font-weight: 600;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.dashboard-right-container-input {
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.dashboard-right-container-input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(127, 255, 212, 0.25);
+}
+
+.dashboard-right-container-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.dashboard-right-container-button {
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.dashboard-table-value.actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 2rem;
+}
+
+.dashboard-table-value.actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.dashboard-table-button.edit {
+  background-color: transparent;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+}
+
+.dashboard-table-button.edit:hover {
+  background-color: rgba(127, 255, 212, 0.1);
+  color: var(--accent-dark);
+}
+
+.edit-form-input-div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+  margin-bottom: 1.25rem;
+}
+
+.edit-form-label {
+  font-weight: 600;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.edit-form-input,
+.edit-form-select {
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  font-family: inherit;
+  width: 100%;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.edit-form-input:focus,
+.edit-form-select:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(127, 255, 212, 0.25);
+}
+
+.dashboard-right-container-button.confirm {
+  background-color: var(--accent);
+  color: var(--bg-dark);
+}
+
+.dashboard-right-container-button.confirm:hover {
+  background-color: var(--accent-dark);
+}
+
+.dashboard-right-container-button:disabled {
+  background-color: var(--border-color);
+  color: var(--text-secondary);
+  cursor: not-allowed;
+  opacity: 0.7;
+  border: none;
+}
+
+.dashboard-right-container-button.cancelar:disabled {
+  background-color: transparent;
+  border: 1px solid var(--border-color);
+}
+
+.filter-bar-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.dashboard-left-container-forms {
+  margin-bottom: 0;
+  flex-grow: 1;
+}
+
+.add-user-button {
+  background-color: var(--accent);
+  color: var(--bg-dark);
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  height: fit-content;
+  white-space: nowrap;
+}
+
+.add-user-button:hover {
+  background-color: var(--accent-dark);
+  transform: translateY(-2px);
+}

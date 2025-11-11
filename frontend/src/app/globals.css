@@ -1,0 +1,56 @@
+:root {
+  --bg-dark: #1a1b26;
+  --bg-card: #2a2b3f;
+  --text-primary: #f0f5f9;
+  --text-secondary: #8a8a93;
+  --accent: #7fffd4;
+  --accent-dark: #66ccaa;
+  --error: #ff4d4d;
+  --success: #4dff88;
+  --border-color: #4a4b5f;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+.message-box {
+  width: 100%;
+  max-width: 420px;
+  margin-bottom: 1rem;
+}
+
+.p-error {
+  background-color: rgba(255, 77, 77, 0.1);
+  border: 1px solid var(--error);
+  color: var(--error);
+  padding: 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.p-success {
+  background-color: rgba(77, 255, 136, 0.1);
+  border: 1px solid var(--success);
+  color: var(--success);
+  padding: 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+}
