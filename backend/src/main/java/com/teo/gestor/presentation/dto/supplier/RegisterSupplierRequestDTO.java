@@ -4,6 +4,7 @@ import org.hibernate.validator.constraints.br.CNPJ;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 
 public class RegisterSupplierRequestDTO {
 
@@ -26,7 +27,7 @@ public class RegisterSupplierRequestDTO {
   private String city;
   @NotEmpty(message = "A rua é obrigatória!")
   private String street;
-  @NotEmpty(message = "O número do estabelecimento é obrigatório!")
+  @NotNull(message = "O número do estabelecimento é obrigatório!")
   private Number number;
   @NotEmpty(message = "O bairro é obrigatório!")
   private String district;
@@ -46,7 +47,7 @@ public class RegisterSupplierRequestDTO {
       @NotEmpty(message = "CEP é obrigatório!") String cep, @NotEmpty(message = "O estado é obrigatório!") String state,
       @NotEmpty(message = "A cidade é obrigatória!") String city,
       @NotEmpty(message = "A rua é obrigatória!") String street,
-      @NotEmpty(message = "O número do estabelecimento é obrigatório!") Number number,
+      @NotNull(message = "O número do estabelecimento é obrigatório!") Number number,
       @NotEmpty(message = "O bairro é obrigatório!") String district) {
     this.enterpriseName = enterpriseName;
     this.cnpj = cnpj;
