@@ -115,7 +115,7 @@ export default function DashboardSupplier() {
     setEditLoading(true);
     setEditError(null);
     try {
-      await api.put(`/suppliers?id=${supplierToEdit.id}`, formData);
+      await api.patch(`/suppliers?id=${supplierToEdit.id}`, formData);
       alert("Fornecedor atualizado com sucesso!");
       showTable();
       fetchSuppliers();
@@ -169,11 +169,18 @@ export default function DashboardSupplier() {
         <SupplierForm
           title="Editar Fornecedor"
           initialData={{
-            name: supplierToEdit.enterpriseName,
-            cnpj: supplierToEdit.cnpj,
+            enterpriseName: supplierToEdit.enterpriseName,
+            cnpj: "",
             email: supplierToEdit.email,
             phone: supplierToEdit.phone,
+            cep: "",
+            state: "",
+            city: "",
+            street: "",
+            number: "",
+            district: "",
           }}
+          type={"Edit"}
           loading={editLoading}
           error={editError}
           onSubmit={handleConfirmEdit}
@@ -182,7 +189,19 @@ export default function DashboardSupplier() {
       ) : isCreatingSupplier ? (
         <SupplierForm
           title="Criar Novo Fornecedor"
-          initialData={{ name: "", cnpj: "", email: "", phone: "" }}
+          initialData={{
+            enterpriseName: "",
+            cnpj: "",
+            email: "",
+            phone: "",
+            cep: "",
+            state: "",
+            city: "",
+            street: "",
+            number: "",
+            district: "",
+          }}
+          type={"Create"}
           loading={createLoading}
           error={createError}
           onSubmit={handleConfirmCreate}

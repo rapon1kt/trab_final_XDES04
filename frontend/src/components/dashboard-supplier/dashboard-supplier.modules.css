@@ -402,3 +402,30 @@
   background-color: var(--accent-dark);
   transform: translateY(-2px);
 }
+
+.form-fieldset {
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.form-legend {
+  padding: 0 0.5rem;
+  color: var(--text-secondary);
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  width: 100%;
+}
+
+.form-row > .edit-form-input-div {
+  flex: 1;
+  min-width: 200px;
+  margin-bottom: 0;
+}
