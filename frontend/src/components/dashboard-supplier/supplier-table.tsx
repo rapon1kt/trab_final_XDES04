@@ -63,7 +63,6 @@ export default function SupplierTable({
               <button
                 className="dashboard-table-button cancel"
                 onClick={() => onDeleteSupplier(supplier)}
-                // Note que não há 'disabled' aqui
               >
                 Deletar
               </button>
