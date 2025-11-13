@@ -3,10 +3,10 @@ import {
   DashboardSupplier,
   DashboardUser,
   DashboardCategory,
+  DashboardProduct,
 } from "@/components";
 import { useSearchParams } from "next/navigation";
 import "./page.modules.css";
-import DashboardProduct from "@/components/dashboard-product/dashboard-product";
 
 export default function Dashboard() {
   const searchParam = useSearchParams();
