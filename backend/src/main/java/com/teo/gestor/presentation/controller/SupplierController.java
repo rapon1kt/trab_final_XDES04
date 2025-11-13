@@ -4,6 +4,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.teo.gestor.application.service.supplier.DeleteSupplierService;
 import com.teo.gestor.application.service.supplier.FindSuppliersService;
 import com.teo.gestor.application.service.supplier.RegisterSupplierService;
 import com.teo.gestor.application.service.supplier.UpdateSupplierService;
@@ -19,6 +20,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @RestController
@@ -28,12 +30,15 @@ public class SupplierController {
   private final RegisterSupplierService registerSupplierService;
   private final UpdateSupplierService updateSupplierService;
   private final FindSuppliersService findSuppliersService;
+  private final DeleteSupplierService deleteSupplierService;
 
   public SupplierController(RegisterSupplierService registerSupplierService,
-      UpdateSupplierService updateSupplierService, FindSuppliersService findSuppliersService) {
+      UpdateSupplierService updateSupplierService, FindSuppliersService findSuppliersService,
+      DeleteSupplierService deleteSupplierService) {
     this.registerSupplierService = registerSupplierService;
     this.updateSupplierService = updateSupplierService;
     this.findSuppliersService = findSuppliersService;
+    this.deleteSupplierService = deleteSupplierService;
   }
 
   @PostMapping
@@ -51,6 +56,11 @@ public class SupplierController {
   public ResponseEntity<?> find(@RequestParam("filter") SupplierFilter filter,
       @RequestParam("value") Optional<String> value) {
     return ResponseEntity.ok(this.findSuppliersService.handle(filter, value));
+  }
+
+  @DeleteMapping
+  public ResponseEntity<?> delete(@RequestParam("id") String id) {
+    return ResponseEntity.ok(this.deleteSupplierService.handle(id));
   }
 
 }
