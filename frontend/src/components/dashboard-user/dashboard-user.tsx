@@ -126,7 +126,7 @@ export default function DashboardUser() {
     setCreateLoading(true);
     setCreateError(null);
     try {
-      await api.post("/users", formData);
+      await api.post("/req/signup", formData);
       alert("Usuário criado com sucesso!");
       showTable();
       fetchUsers();
