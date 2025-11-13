@@ -37,6 +37,16 @@ export default function NavBar() {
           className="menu-item"
           onClick={() =>
             router.push(
+              pathname + "?" + createQueryString("pageType", "category")
+            )
+          }
+        >
+          Categoria
+        </p>
+        <p
+          className="menu-item"
+          onClick={() =>
+            router.push(
               pathname + "?" + createQueryString("pageType", "supplier")
             )
           }
