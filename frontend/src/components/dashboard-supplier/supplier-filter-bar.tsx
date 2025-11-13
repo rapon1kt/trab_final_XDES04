@@ -24,9 +24,9 @@ export default function SupplierFilterBar({
   };
 
   const handleClear = () => {
-    setFilterType("NAME");
+    setFilterType("ENTERPRISENAME");
     setFilterValue("");
-    onSearch({ filter: "NAME", value: "" });
+    onSearch({ filter: "ENTERPRISENAME", value: "" });
   };
 
   return (
@@ -42,7 +42,7 @@ export default function SupplierFilterBar({
               setFilterType(e.target.value as SupplierQuery["filter"])
             }
           >
-            <option value="NAME">Nome</option>
+            <option value="ENTERPRISENAME">Nome</option>
             <option value="CNPJ">CNPJ</option>
           </select>
         </div>
