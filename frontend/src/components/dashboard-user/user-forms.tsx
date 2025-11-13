@@ -57,6 +57,19 @@ export default function UserForm({
       <h3 className="dashboard-title">{title}</h3>
       {error && <p className="dashboard-p-error">{error}</p>}
       <form onSubmit={handleSubmit}>
+        {mode === "create" && (
+          <div className="edit-form-input-div">
+            <p className="edit-form-label">Nome</p>
+            <input
+              type="text"
+              name="name"
+              className="edit-form-input"
+              value={(formData as CreateFormData).name}
+              onChange={handleChange}
+              required
+            />
+          </div>
+        )}
         <div className="edit-form-input-div">
           <p className="edit-form-label">Email</p>
           <input
@@ -65,7 +78,7 @@ export default function UserForm({
             className="edit-form-input"
             value={formData.email}
             onChange={handleChange}
-            required
+            required={mode == "create"}
           />
         </div>
         <div className="edit-form-input-div">
@@ -75,22 +88,9 @@ export default function UserForm({
             name="password"
             className="edit-form-input"
             onChange={handleChange}
-            required
+            required={mode == "create"}
           />
         </div>
-        {mode === "create" && (
-          <div className="edit-form-input-div">
-            <p className="edit-form-label">Senha</p>
-            <input
-              type="password"
-              name="password"
-              className="edit-form-input"
-              value={(formData as CreateFormData).password}
-              onChange={handleChange}
-              required
-            />
-          </div>
-        )}
         <div className="dashboard-right-container-buttons">
           <button
             type="submit"
