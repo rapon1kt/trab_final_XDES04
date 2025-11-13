@@ -11,7 +11,7 @@ import SupplierForm, { SupplierFormData } from "./supplier-form";
 import DeleteConfirmation from "./delete-confirmation";
 
 export interface SupplierQuery {
-  filter: "NAME" | "CNPJ" | "ALL";
+  filter: "ENTERPRISENAME" | "CNPJ" | "ALL";
   value: string;
 }
 
@@ -34,18 +34,16 @@ export default function DashboardSupplier() {
   const [createLoading, setCreateLoading] = useState(false);
 
   const [activeQuery, setActiveQuery] = useState<SupplierQuery>({
-    filter: "NAME",
+    filter: "ENTERPRISENAME",
     value: "",
   });
 
   const fetchSuppliers = async () => {
     let url = "/suppliers?filter=ALL";
     if (activeQuery.value.trim() !== "") {
-      const params = new URLSearchParams({
-        filter: activeQuery.filter,
-        value: activeQuery.value.trim(),
-      });
-      url = `/suppliers?${params.toString()}`;
+      url = `/suppliers?filter=${
+        activeQuery.filter
+      }&value=${activeQuery.value.trim()}`;
     }
     try {
       setLoading(true);
@@ -208,13 +206,19 @@ export default function DashboardSupplier() {
           onCancel={showTable}
         />
       ) : (
-        <SupplierTable
-          suppliers={suppliers}
-          loading={loading}
-          error={error}
-          onEditSupplier={handleOpenEditModal}
-          onDeleteSupplier={handleOpenDeleteModal}
-        />
+        <>
+          {suppliers ? (
+            <SupplierTable
+              suppliers={suppliers}
+              loading={loading}
+              error={error}
+              onEditSupplier={handleOpenEditModal}
+              onDeleteSupplier={handleOpenDeleteModal}
+            />
+          ) : (
+            <p>Parece que ainda não tem nenhum fornecedor...</p>
+          )}
+        </>
       )}
     </main>
   );
