@@ -5,6 +5,7 @@ public class Supplier {
   private String enterpriseName;
   private String cnpj;
   private String phone;
+  private boolean active;
   private String email;
   private Address address;
 
@@ -12,11 +13,13 @@ public class Supplier {
 
   }
 
-  public Supplier(String id, String enterpriseName, String cnpj, String phone, String email, Address address) {
+  public Supplier(String id, String enterpriseName, String cnpj, String phone, boolean active, String email,
+      Address address) {
     this.id = id;
     this.enterpriseName = enterpriseName;
     this.cnpj = cnpj;
     this.phone = phone;
+    this.active = active;
     this.email = email;
     this.address = address;
   }
@@ -26,6 +29,7 @@ public class Supplier {
     supplier.setEnterpriseName(enterpriseName);
     supplier.setCnpj(cpnj);
     supplier.setPhone(phone);
+    supplier.setActive(true);
     supplier.setEmail(email);
     supplier.setAddress(address);
     return supplier;
@@ -61,6 +65,14 @@ public class Supplier {
 
   public void setPhone(String phone) {
     this.phone = phone;
+  }
+
+  public boolean isActive() {
+    return active;
+  }
+
+  public void setActive(boolean active) {
+    this.active = active;
   }
 
   public String getEmail() {

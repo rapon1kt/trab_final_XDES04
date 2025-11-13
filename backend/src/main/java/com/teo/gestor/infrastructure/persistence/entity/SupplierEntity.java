@@ -15,6 +15,7 @@ public class SupplierEntity {
   private String enterpriseName;
   private String cnpj;
   private String phone;
+  private boolean active;
   private String email;
   private Address address;
 }
