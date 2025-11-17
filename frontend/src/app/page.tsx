@@ -1,23 +1,41 @@
 "use client";
-import { useState, FormEvent } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 import api from "@/lib/api";
 import "./page.modules.css";
-import Link from "next/link";
+
+interface FormElements extends HTMLFormControlsCollection {
+  email: HTMLInputElement;
+  password: HTMLInputElement;
+}
+
+interface LoginFormElement extends HTMLFormElement {
+  readonly elements: FormElements;
+}
 
 export default function Login() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState<any>();
   const [error, setError] = useState<string | null>(null);
   const router = useRouter();
 
-  const handleSubmit = async (e: FormEvent) => {
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      if (localStorage.getItem("authToken")) {
+        localStorage.removeItem("authToken");
+      }
+    }
+  }, []);
+
+  const handleSubmit = async (e: React.FormEvent<LoginFormElement>) => {
     e.preventDefault();
     setError(null);
     try {
-      const loginData = { email, password };
+      const formElements = e.currentTarget.elements;
 
-      const response = await api.post("/req/signin", loginData);
+      const response = await api.post("/req/signin", {
+        email: formElements.email.value,
+        password: formElements.password.value,
+      });
 
       const token: string = response.data;
 
@@ -47,35 +65,21 @@ export default function Login() {
         <h2 className="login-title">Login</h2>
         <form className="login-forms" onSubmit={handleSubmit}>
           <div className="login-input-div">
-            <p className="">Email</p>
-            <input
-              type="email"
-              value={email}
-              className="login-input"
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
+            <p>Email</p>
+            <input name="email" type="email" className="login-input" required />
           </div>
           <div className="login-input-div">
             <p>Senha</p>
             <input
+              name="password"
               type="password"
-              value={password}
               className="login-input"
-              onChange={(e) => setPassword(e.target.value)}
               required
             />
           </div>
           <button className="login-button" type="submit">
             Entrar
           </button>
-          <p className="login-link">
-            Registrar nova conta{" "}
-            <Link className="login-link-link" href="/register">
-              aqui
-            </Link>
-            !
-          </p>
         </form>
       </div>
     </main>
