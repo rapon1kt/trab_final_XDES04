@@ -20,22 +20,11 @@ export default function ProductTable({
   onEditProduct,
   onDeleteProduct,
 }: ProductTableProps) {
-  // Helpers para encontrar nomes por ID
   const getCategoryName = (id: string) => {
     return categories.find((c) => c.id === id)?.name || "N/A";
   };
   const getSupplierName = (id: string) => {
     return suppliers.find((s) => s.id === id)?.enterpriseName || "N/A";
-  };
-
-  // Helper para formatar data
-  const formatDate = (instantStr: string | undefined) => {
-    if (!instantStr) return "N/A";
-    try {
-      return new Date(instantStr).toLocaleDateString("pt-BR");
-    } catch (e) {
-      return "Data Inválida";
-    }
   };
 
   if (loading) return <p>Carregando...</p>;
@@ -72,7 +61,7 @@ export default function ProductTable({
               })}
             </td>
             <td className="dashboard-table-value">
-              {formatDate(product.validDate)}
+              {new Date(Date.now()).toLocaleDateString()}
             </td>
             <td className="dashboard-table-value actions">
               <button
