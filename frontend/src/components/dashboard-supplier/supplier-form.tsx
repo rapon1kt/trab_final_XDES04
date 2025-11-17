@@ -84,7 +84,7 @@ export default function SupplierForm({
         <div className="edit-form-input-div">
           <p className="edit-form-label">Email</p>
           <input
-            type="email"
+            type="text"
             name="email"
             className="edit-form-input"
             value={formData.email}
